@@ -21,7 +21,7 @@ export function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-linear-to-br from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-lg">C</span>
             </div>
             <span className="text-xl font-bold text-slate-900">CDC Pro</span>
@@ -46,7 +46,7 @@ export function Navbar() {
               <Button variant="ghost">Sign in</Button>
             </Link>
             <Link href="/register">
-              <Button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700">
+              <Button className="bg-linear-to-br from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700">
                 Sign up
               </Button>
             </Link>
@@ -86,7 +86,7 @@ export function Navbar() {
                   </Button>
                 </Link>
                 <Link href="/register" onClick={() => setIsMenuOpen(false)}>
-                  <Button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600">
+                  <Button className="w-full bg-linear-to-br from-blue-600 to-indigo-600">
                     Sign up
                   </Button>
                 </Link>
