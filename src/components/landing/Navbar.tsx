@@ -12,7 +12,7 @@ export function Navbar() {
     { name: 'Product', href: '#features' },
     { name: 'Pricing', href: '#pricing' },
     { name: 'Resources', href: '#faq' },
-    { name: 'Blog', href: '#' },
+    // { name: 'Blog', href: '#' },
   ]
 
   return (
