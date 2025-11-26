@@ -8,7 +8,7 @@ export function Hero() {
   return (
     <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 opacity-60" />
+      <div className="absolute inset-0 bg-linear-to-br from-blue-50 via-indigo-50 to-purple-50 opacity-60" />
       
       {/* Animated Orbs */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400/30 rounded-full blur-3xl animate-pulse" />
@@ -25,9 +25,9 @@ export function Hero() {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-900 mb-6 leading-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
             Créez des{' '}
-            <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+            <span className="bg-linear-to-br from-blue-600 to-indigo-600 bg-clip-text text-transparent">
               cahiers des charges
             </span>{' '}
             en quelques minutes
@@ -44,7 +44,7 @@ export function Hero() {
             <Link href="/register">
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-6 text-lg group"
+                className="bg-linear-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-6 text-lg group"
               >
                 Commencer gratuitement
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -78,13 +78,13 @@ export function Hero() {
         <div className="mt-20 relative">
           <div className="relative mx-auto max-w-5xl">
             {/* Glow Effect */}
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-indigo-600/20 blur-3xl" />
+            <div className="absolute inset-0 bg-linear-to-r from-blue-600/20 to-indigo-600/20 blur-3xl" />
             
             {/* Dashboard Preview */}
             <div className="relative rounded-2xl border-8 border-white shadow-2xl overflow-hidden bg-white">
-              <div className="aspect-video bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center">
+              <div className="aspect-video bg-linear-to-br from-slate-50 to-slate-100 flex items-center justify-center">
                 <div className="text-center">
-                  <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl mx-auto mb-4 flex items-center justify-center">
+                  <div className="w-20 h-20 bg-linear-to-br from-blue-600 to-indigo-600 rounded-2xl mx-auto mb-4 flex items-center justify-center">
                     <FileText className="h-10 w-10 text-white" />
                   </div>
                   <p className="text-slate-400 text-lg">Dashboard Preview</p>

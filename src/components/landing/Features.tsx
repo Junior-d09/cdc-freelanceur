@@ -61,7 +61,7 @@ export function Features() {
               className="group relative p-8 rounded-2xl bg-slate-50 hover:bg-white border border-slate-200 hover:border-slate-300 transition-all hover:shadow-xl hover:-translate-y-1"
             >
               {/* Icon */}
-              <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${feature.gradient} mb-5`}>
+              <div className={`inline-flex p-3 rounded-xl bg-linear-to-br ${feature.gradient} mb-5`}>
                 <feature.icon className="h-6 w-6 text-white" />
               </div>
 

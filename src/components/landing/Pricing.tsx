@@ -54,7 +54,7 @@ const plans = [
 
 export function Pricing() {
   return (
-    <section id="pricing" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 to-slate-100">
+    <section id="pricing" className="py-24 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-slate-50 to-slate-100">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -73,7 +73,7 @@ export function Pricing() {
               key={index}
               className={`relative rounded-2xl p-8 ${
                 plan.popular
-                  ? 'bg-gradient-to-br from-blue-600 to-indigo-600 text-white shadow-2xl scale-105'
+                  ? 'bg-linear-to-br from-blue-600 to-indigo-600 text-white shadow-2xl scale-105'
                   : 'bg-white border-2 border-slate-200'
               }`}
             >
@@ -122,7 +122,7 @@ export function Pricing() {
                 {plan.features.map((feature, idx) => (
                   <li key={idx} className="flex items-start">
                     <Check
-                      className={`h-5 w-5 mr-3 flex-shrink-0 ${
+                      className={`h-5 w-5 mr-3 shrink-0 ${
                         plan.popular ? 'text-blue-200' : 'text-green-600'
                       }`}
                     />
@@ -143,7 +143,7 @@ export function Pricing() {
                   className={`w-full ${
                     plan.popular
                       ? 'bg-white text-blue-600 hover:bg-blue-50'
-                      : 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700'
+                      : 'bg-linear-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700'
                   }`}
                   size="lg"
                 >
