@@ -100,24 +100,6 @@ export function FAQ() {
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="mt-16 text-center bg-white rounded-2xl p-8 border border-slate-200 shadow-lg">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4">
-            <MessageCircle className="h-8 w-8 text-blue-600" />
-          </div>
-          <h3 className="text-2xl font-bold text-slate-900 mb-2">
-            Vous avez d&apos;autres questions ?
-          </h3>
-          <p className="text-slate-600 mb-6">
-            Notre équipe est là pour vous aider
-          </p>
-          <a
-            href="mailto:support@cdcpro.com"
-            className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white bg-linnear-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 rounded-lg transition-all"
-          >
-            Nous contacter
-          </a>
-        </div>
       </div>
     </section>
   )

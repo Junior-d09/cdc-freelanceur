@@ -47,20 +47,14 @@ const benefits = [
 
 export function Benefits() {
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-600 to-indigo-700 text-white relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl" />
-      </div>
-
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-blue-200 to-indigo-200 text-gray-900 relative overflow-hidden">
       <div className="relative max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
             Pourquoi les freelanceurs nous adorent
           </h2>
-          <p className="text-xl text-blue-100">
+          <p className="text-lg text-gray-700">
             Des résultats concrets qui transforment votre façon de travailler
           </p>
         </div>
@@ -70,54 +64,34 @@ export function Benefits() {
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className="group relative bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all hover:scale-105"
+              className="group relative bg-blue-50/20 backdrop-blur-sm rounded-xl p-6 border border-gray-100 hover:bg-blue-100/30 transition-all hover:scale-105"
             >
               {/* Icon */}
-              <div className="inline-flex p-3 rounded-xl bg-white/20 mb-6">
-                <benefit.icon className="h-8 w-8 text-white" />
+              <div className="inline-flex p-2 rounded-lg bg-blue-100/30 mb-4">
+                <benefit.icon className="h-6 w-6 text-blue-700" />
               </div>
 
               {/* Title */}
-              <h3 className="text-2xl font-bold mb-3">
+              <h3 className="text-xl font-semibold mb-2">
                 {benefit.title}
               </h3>
 
               {/* Description */}
-              <p className="text-blue-100 mb-6 leading-relaxed">
+              <p className="text-gray-700 text-sm mb-4 leading-relaxed">
                 {benefit.description}
               </p>
 
               {/* Stat */}
-              <div className="pt-6 border-t border-white/20">
-                <div className="text-4xl font-bold mb-1">
+              <div className="pt-4 border-t border-blue-100">
+                <div className="text-3xl font-bold text-blue-700 mb-1">
                   {benefit.stat}
                 </div>
-                <div className="text-sm text-blue-200">
+                <div className="text-xs text-gray-500">
                   {benefit.statLabel}
                 </div>
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Bottom Stats */}
-        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8">
-          <div className="text-center">
-            <div className="text-5xl font-bold mb-2">500+</div>
-            <div className="text-blue-200">CDC créés</div>
-          </div>
-          <div className="text-center">
-            <div className="text-5xl font-bold mb-2">200+</div>
-            <div className="text-blue-200">Freelanceurs actifs</div>
-          </div>
-          <div className="text-center">
-            <div className="text-5xl font-bold mb-2">95%</div>
-            <div className="text-blue-200">Taux de validation</div>
-          </div>
-          <div className="text-center">
-            <div className="text-5xl font-bold mb-2">4.9★</div>
-            <div className="text-blue-200">Note moyenne</div>
-          </div>
         </div>
       </div>
     </section>

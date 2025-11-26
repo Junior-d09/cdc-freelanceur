@@ -63,7 +63,7 @@ export function Testimonials() {
     <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        <div className="text-center max-w-2xl mx-auto mb-20">
           <div className="inline-flex items-center space-x-2 bg-green-100 text-green-700 px-4 py-2 rounded-full mb-6">
             <Star className="h-4 w-4 fill-current" />
             <span className="text-sm font-semibold">4.9/5 sur 200+ avis</span>

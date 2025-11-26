@@ -33,7 +33,7 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 to-slate-100">
+    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-slate-50 to-slate-100">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
@@ -51,18 +51,18 @@ export function HowItWorks() {
             <div key={index} className="relative">
               {/* Connector Line (hidden on mobile and last item) */}
               {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-16 left-1/2 w-full h-0.5 bg-gradient-to-r from-slate-300 to-slate-200" />
+                <div className="hidden lg:block absolute top-16 left-1/2 w-full h-0.5 bg-linear-to-r from-slate-300 to-slate-200" />
               )}
 
               {/* Step Card */}
               <div className="relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow border border-slate-200">
                 {/* Step Number */}
-                <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-slate-800 to-slate-700 rounded-xl flex items-center justify-center shadow-lg">
+                <div className="absolute -top-4 -left-4 w-12 h-12 bg-linear-to-br from-slate-800 to-slate-700 rounded-xl flex items-center justify-center shadow-lg">
                   <span className="text-white font-bold text-lg">{step.number}</span>
                 </div>
 
                 {/* Icon */}
-                <div className={`inline-flex p-4 rounded-xl bg-gradient-to-br ${step.color} mb-6 mt-4`}>
+                <div className={`inline-flex p-4 rounded-xl bg-linear-to-br ${step.color} mb-6 mt-4`}>
                   <step.icon className="h-8 w-8 text-white" />
                 </div>
 
