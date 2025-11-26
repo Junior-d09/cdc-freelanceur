@@ -75,88 +75,46 @@ export function RegisterForm() {
     setIsLoading(true)
     setError(null)
 
-    try {
-      // Appel à ton API backend pour créer le compte
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/register`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: data.name,
-          email: data.email,
-          password: data.password,
-        }),
-      })
+    // try {
+    //   // Appel à ton API backend pour créer le compte
+    //   const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/register`, {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify({
+    //       name: data.name,
+    //       email: data.email,
+    //       password: data.password,
+    //     }),
+    //   })
 
-      if (!response.ok) {
-        const errorData = await response.json()
-        throw new Error(errorData.message || 'Erreur lors de l\'inscription')
-      }
+    //   if (!response.ok) {
+    //     const errorData = await response.json()
+    //     throw new Error(errorData.message || 'Erreur lors de l\'inscription')
+    //   }
 
-      setSuccess(true)
+    //   setSuccess(true)
 
-      // Auto-connexion après inscription
-      setTimeout(async () => {
-        await signIn('credentials', {
-          email: data.email,
-          password: data.password,
-          redirect: false,
-        })
-        router.push('/dashboard')
-      }, 1500)
-    } catch (err: any) {
-      setError(err.message || 'Une erreur est survenue. Veuillez réessayer.')
-      setIsLoading(false)
-    }
+    //   // Auto-connexion après inscription
+    //   setTimeout(async () => {
+    //     await signIn('credentials', {
+    //       email: data.email,
+    //       password: data.password,
+    //       redirect: false,
+    //     })
+    //     router.push('/dashboard')
+    //   }, 1500)
+    // } catch (err: any) {
+    //   setError(err.message || 'Une erreur est survenue. Veuillez réessayer.')
+    //   setIsLoading(false)
+    // }
   }
 
-  const handleGoogleSignIn = async () => {
-    setIsLoading(true)
-    await signIn('google', { callbackUrl: '/dashboard' })
-  }
-
-  if (success) {
-    return (
-      <div className="text-center py-8">
-        <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
-          <CheckCircle2 className="h-8 w-8 text-green-600" />
-        </div>
-        <h3 className="text-xl font-semibold text-slate-900 mb-2">
-          Compte créé avec succès !
-        </h3>
-        <p className="text-slate-600">
-          Redirection vers votre dashboard...
-        </p>
-      </div>
-    )
-  }
+  
 
   return (
     <div className="space-y-6">
-      {/* Google Sign Up */}
-      <Button
-        type="button"
-        variant="outline"
-        className="w-full"
-        onClick={handleGoogleSignIn}
-        disabled={isLoading}
-      >
-        <Chrome className="mr-2 h-4 w-4" />
-        Continuer avec Google
-      </Button>
-
-      {/* Divider */}
-      <div className="relative">
-        <div className="absolute inset-0 flex items-center">
-          <div className="w-full border-t border-slate-200" />
-        </div>
-        <div className="relative flex justify-center text-sm">
-          <span className="px-4 bg-white text-slate-500">
-            Ou avec votre email
-          </span>
-        </div>
-      </div>
 
       {/* Form */}
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
@@ -307,7 +265,7 @@ export function RegisterForm() {
         {/* Submit Button */}
         <Button
           type="submit"
-          className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700"
+          className="w-full bg-linear-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700"
           disabled={isLoading}
         >
           {isLoading ? (

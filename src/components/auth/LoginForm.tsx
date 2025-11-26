@@ -9,7 +9,7 @@ import { signIn } from 'next-auth/react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { Eye, EyeOff, Loader2, Chrome } from 'lucide-react'
+import { Eye, EyeOff, Loader2,  } from 'lucide-react'
 
 // Schéma de validation
 const loginSchema = z.object({
@@ -71,17 +71,7 @@ export function LoginForm() {
 
   return (
     <div className="space-y-6">
-      {/* Google Sign In */}
-      <Button
-        type="button"
-        variant="outline"
-        className="w-full"
-        onClick={handleGoogleSignIn}
-        disabled={isLoading}
-      >
-        <Chrome className="mr-2 h-4 w-4" />
-        Continuer avec Google
-      </Button>
+      
 
       {/* Divider */}
       <div className="relative">
@@ -175,7 +165,7 @@ export function LoginForm() {
         {/* Submit Button */}
         <Button
           type="submit"
-          className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700"
+          className="w-full bg-linear-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700"
           disabled={isLoading}
         >
           {isLoading ? (
