@@ -23,10 +23,10 @@ export function Navbar() {
           <Link href="/" className="flex items-center space-x-2">
             <div className="flex justify-center mb-8 mt-8">
               <Image
-                src="/images/logo.png"
+                src="/images/logo-.png"
                 alt="Logo"
-                width={70}
-                height={70}
+                width={100}
+                height={100}
                 className=""
               />
             </div>
