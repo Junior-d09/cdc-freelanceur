@@ -12,7 +12,7 @@ export default function RegisterPage() {
           {/* Logo */}
           <div className="flex justify-center mb-2 mt-2">
             <Image
-              src="/images/logo.png"
+              src="/images/logo-.png"
               alt="Logo"
               width={70}
               height={70}
