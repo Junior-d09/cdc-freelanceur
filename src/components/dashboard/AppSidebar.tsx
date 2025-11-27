@@ -89,7 +89,7 @@ export function AppSidebar({ user }: AppSidebarProps) {
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
               <Link href="/dashboard">
-                <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-indigo-600">
+                <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-linear-to-br from-blue-600 to-indigo-600">
                   <span className="text-white font-bold">C</span>
                 </div>
                 <div className="flex flex-col gap-0.5 leading-none">
@@ -104,7 +104,7 @@ export function AppSidebar({ user }: AppSidebarProps) {
         {/* Quick Action */}
         <div className="px-2 py-2">
           <Link href="/dashboard/projects/new">
-            <Button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700" size="sm">
+            <Button className="w-full bg-linear-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700" size="sm">
               <PlusCircle className="mr-2 h-4 w-4" />
               Nouveau Projet
             </Button>
@@ -187,7 +187,7 @@ export function AppSidebar({ user }: AppSidebarProps) {
 
         {/* Upgrade Banner */}
         <SidebarGroup className="mt-auto">
-          <div className="rounded-lg bg-gradient-to-br from-blue-600 to-indigo-600 p-4 text-white">
+          <div className="rounded-lg bg-linear-to-br from-blue-600 to-indigo-600 p-4 text-white">
             <div className="flex items-center gap-2 mb-2">
               <Sparkles className="h-4 w-4" />
               <span className="font-semibold text-sm">Passez à Premium</span>
@@ -212,7 +212,7 @@ export function AppSidebar({ user }: AppSidebarProps) {
               <div className="flex items-center gap-2 cursor-pointer">
                 <Avatar className="h-8 w-8">
                   <AvatarImage src={user.image || ''} />
-                  <AvatarFallback className="bg-gradient-to-br from-blue-600 to-indigo-600 text-white text-xs">
+                  <AvatarFallback className="bg-linear-to-br from-blue-600 to-indigo-600 text-white text-xs">
                     {initials}
                   </AvatarFallback>
                 </Avatar>

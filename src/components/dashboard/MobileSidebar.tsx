@@ -61,7 +61,7 @@ export function MobileSidebar() {
       <SheetContent side="left" className="w-64 p-0">
         <SheetHeader className="p-6 border-b">
           <SheetTitle className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-linear-to-br from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-lg">C</span>
             </div>
             <span className="text-xl font-bold">CDC Pro</span>
@@ -72,7 +72,7 @@ export function MobileSidebar() {
           {/* Quick Action */}
           <div className="p-4">
             <Link href="/dashboard/projects/new" onClick={() => setOpen(false)}>
-              <Button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600">
+              <Button className="w-full bg-linear-to-r from-blue-600 to-indigo-600">
                 <PlusCircle className="mr-2 h-4 w-4" />
                 Nouveau Projet
               </Button>
