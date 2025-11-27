@@ -17,12 +17,12 @@ export function Hero() {
       <div className="relative max-w-7xl mx-auto">
         <div className="text-center max-w-4xl mx-auto">
           {/* Badge */}
-          <div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-blue-200 mb-8">
+          {/* <div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-blue-200 mb-8">
             <Sparkles className="h-4 w-4 text-blue-600" />
             <span className="text-sm font-medium text-slate-700">
               AI-Powered CDC Creation
             </span>
-          </div>
+          </div> */}
 
           {/* Main Heading */}
           <h1 className="text-4xl sm:text-5xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
@@ -81,7 +81,7 @@ export function Hero() {
             <div className="absolute inset-0 bg-linear-to-r from-blue-600/20 to-indigo-600/20 blur-3xl" />
             
             {/* Dashboard Preview */}
-            <div className="relative rounded-2xl border-8 border-white shadow-2xl overflow-hidden bg-white">
+            {/* <div className="relative rounded-2xl border-8 border-white shadow-2xl overflow-hidden bg-white">
               <div className="aspect-video bg-linear-to-br from-slate-50 to-slate-100 flex items-center justify-center">
                 <div className="text-center">
                   <div className="w-20 h-20 bg-linear-to-br from-blue-600 to-indigo-600 rounded-2xl mx-auto mb-4 flex items-center justify-center">
@@ -90,7 +90,7 @@ export function Hero() {
                   <p className="text-slate-400 text-lg">Dashboard Preview</p>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

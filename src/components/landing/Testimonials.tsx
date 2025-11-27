@@ -1,62 +1,63 @@
-import { Star, Quote } from 'lucide-react'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { Star, Quote } from "lucide-react";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import Image from "next/image";
 
 const testimonials = [
   {
-    name: 'Sarah Martinez',
-    role: 'Designer UX/UI',
-    company: 'Freelance',
-    avatar: '',
+    name: "Sarah Martinez",
+    role: "Designer UX/UI",
+    company: "Freelance",
+    avatar: "/testimonials/sarah.webp",
     rating: 5,
-    text: 'CDC Pro a transformé ma façon de travailler. Je crée des cahiers des charges en 10 minutes au lieu de 2 heures. Mes clients adorent la clarté et le professionnalisme.',
-    highlight: 'Gain de temps incroyable',
+    text: 'CDC Pro a transformé ma façon de travailler. Je crée des cahiers des charges en 10 minutes...',
+    highlight: "Gain de temps incroyable",
   },
   {
-    name: 'Thomas Dubois',
-    role: 'Développeur Full-Stack',
-    company: 'Tech Solutions',
-    avatar: '',
+    name: "Thomas Dubois",
+    role: "Développeur Full-Stack",
+    company: "Tech Solutions",
+    avatar: "/testimonials/thomas.jpg",
     rating: 5,
-    text: 'Avant, je perdais un temps fou à rédiger des CDC. Maintenant, tout est guidé et structuré. La validation client en 1 clic est un game-changer pour moi.',
-    highlight: 'Process ultra-simplifié',
+    text: 'Avant, je perdais un temps fou à rédiger des CDC.…',
+    highlight: "Process ultra-simplifié",
   },
   {
-    name: 'Emma Lefebvre',
-    role: 'Consultante Marketing',
-    company: 'Digital Boost',
-    avatar: '',
+    name: "Emma Lefebvre",
+    role: "Consultante Marketing",
+    company: "Digital Boost",
+    avatar: "/testimonials/emma.jpg",
     rating: 5,
-    text: 'J\'ai triplé mon nombre de projets grâce à CDC Pro. Les templates sont parfaits, l\'export PDF est impeccable. Je recommande à 200% !',
-    highlight: '+200% de productivité',
+    text: 'J’ai triplé mon nombre de projets grâce à CDC Pro.…',
+    highlight: "+200% de productivité",
   },
   {
-    name: 'Karim Ben Ali',
-    role: 'Chef de Projet Web',
-    company: 'WebAgency',
-    avatar: '',
+    name: "Karim Ben Ali",
+    role: "Chef de Projet Web",
+    company: "WebAgency",
+    avatar: "/testimonials/karim.jpg",
     rating: 5,
-    text: 'L\'outil parfait pour standardiser nos CDC. Mon équipe l\'utilise quotidiennement et nos clients valident beaucoup plus vite qu\'avant.',
-    highlight: 'Validation 3x plus rapide',
+    text: 'L’outil parfait pour standardiser nos CDC.…',
+    highlight: "Validation 3x plus rapide",
   },
   {
-    name: 'Julie Moreau',
-    role: 'Graphiste',
-    company: 'Creative Studio',
-    avatar: '',
+    name: "Julie Moreau",
+    role: "Graphiste",
+    company: "Creative Studio",
+    avatar: "/testimonials/julie.jpg",
     rating: 5,
-    text: 'Je n\'ai jamais été à l\'aise avec la rédaction. CDC Pro me guide parfaitement et le résultat est toujours professionnel. C\'est devenu indispensable.',
-    highlight: 'Simple et efficace',
+    text: 'Je n’ai jamais été à l’aise avec la rédaction…',
+    highlight: "Simple et efficace",
   },
   {
-    name: 'Alexandre Petit',
-    role: 'E-commerce Manager',
-    company: 'ShopOnline',
-    avatar: '',
+    name: "Alexandre Petit",
+    role: "E-commerce Manager",
+    company: "ShopOnline",
+    avatar: "/testimonials/alexandre.jpg",
     rating: 5,
-    text: 'Excellent rapport qualité-prix. J\'ai lancé 15 projets e-commerce avec cet outil. La structure des templates est vraiment bien pensée.',
-    highlight: '15 projets réussis',
+    text: 'Excellent rapport qualité-prix.…',
+    highlight: "15 projets réussis",
   },
-]
+];
 
 export function Testimonials() {
   return (
@@ -110,12 +111,17 @@ export function Testimonials() {
 
               {/* Author */}
               <div className="flex items-center space-x-3 pt-6 border-t border-slate-200">
-                <Avatar className="h-12 w-12">
-                  <AvatarImage src={testimonial.avatar} />
-                  <AvatarFallback className="bg-linear-to-br from-blue-600 to-indigo-600 text-white font-semibold">
-                    {testimonial.name.split(' ').map(n => n[0]).join('')}
-                  </AvatarFallback>
-                </Avatar>
+                <div className="relative h-12 w-12 rounded-full overflow-hidden border border-slate-300 shadow-sm">
+                  <Image
+                    src={testimonial.avatar}
+                    alt={testimonial.name}
+                    fill
+                    placeholder="blur"
+                    blurDataURL="/blur-placeholder.png"
+                    className="object-cover"
+                  />
+                </div>
+
                 <div>
                   <div className="font-semibold text-slate-900">
                     {testimonial.name}
@@ -146,5 +152,5 @@ export function Testimonials() {
         </div>
       </div>
     </section>
-  )
+  );
 }

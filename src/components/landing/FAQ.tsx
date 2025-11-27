@@ -20,30 +20,30 @@ const faqs = [
     question: 'Puis-je personnaliser les templates ?',
     answer: 'Dans le plan gratuit, vous utilisez nos templates optimisés tels quels. Avec le plan Premium, vous pouvez personnaliser entièrement les CDC : ajouter votre logo, modifier les sections, ajuster les couleurs, etc. Le plan Agence permet même de créer vos propres templates.',
   },
-  {
-    question: 'Les PDF générés sont-ils professionnels ?',
-    answer: 'Oui ! Tous nos PDF sont conçus pour être élégants et professionnels. Ils incluent une table des matières, une mise en page soignée, et respectent les standards de qualité attendus par vos clients. Avec les plans payants, vous pouvez ajouter votre branding (logo, couleurs).',
-  },
+  // {
+  //   question: 'Les PDF générés sont-ils professionnels ?',
+  //   answer: 'Oui ! Tous nos PDF sont conçus pour être élégants et professionnels. Ils incluent une table des matières, une mise en page soignée, et respectent les standards de qualité attendus par vos clients. Avec les plans payants, vous pouvez ajouter votre branding (logo, couleurs).',
+  // },
   {
     question: 'Que se passe-t-il avec mes données ?',
     answer: 'Vos données sont hébergées de manière sécurisée et restent votre propriété. Nous ne partageons jamais vos informations avec des tiers. Vous pouvez exporter ou supprimer vos projets à tout moment. Nous sommes conformes RGPD.',
   },
-  {
-    question: 'Puis-je collaborer avec mon équipe ?',
-    answer: 'Oui ! Le plan Agence inclut la gestion d\'équipe. Vous pouvez inviter des collaborateurs, définir des rôles et permissions, et travailler ensemble sur les projets. Chaque membre a son propre accès avec ses propres identifiants.',
-  },
-  {
-    question: 'Y a-t-il un engagement ou puis-je annuler à tout moment ?',
-    answer: 'Aucun engagement ! Tous nos plans sont sans engagement. Vous pouvez upgrader, downgrader ou annuler votre abonnement à tout moment depuis votre compte. Si vous annulez, vous gardez accès jusqu\'à la fin de votre période de facturation.',
-  },
-  {
-    question: 'Proposez-vous un support si j\'ai besoin d\'aide ?',
-    answer: 'Absolument ! Le plan gratuit inclut un support par email (réponse sous 48h). Les plans Premium et Agence bénéficient d\'un support prioritaire (réponse sous 24h). Nous avons également une base de connaissances complète et des tutoriels vidéo.',
-  },
-  {
-    question: 'Puis-je importer mes anciens CDC ?',
-    answer: 'Actuellement, la fonctionnalité d\'import n\'est pas disponible dans le MVP. Cependant, vous pouvez facilement recréer vos CDC existants en utilisant nos templates, ce qui est généralement plus rapide que de les reformater manuellement.',
-  },
+  // {
+  //   question: 'Puis-je collaborer avec mon équipe ?',
+  //   answer: 'Oui ! Le plan Agence inclut la gestion d\'équipe. Vous pouvez inviter des collaborateurs, définir des rôles et permissions, et travailler ensemble sur les projets. Chaque membre a son propre accès avec ses propres identifiants.',
+  // },
+  // {
+  //   question: 'Y a-t-il un engagement ou puis-je annuler à tout moment ?',
+  //   answer: 'Aucun engagement ! Tous nos plans sont sans engagement. Vous pouvez upgrader, downgrader ou annuler votre abonnement à tout moment depuis votre compte. Si vous annulez, vous gardez accès jusqu\'à la fin de votre période de facturation.',
+  // },
+  // {
+  //   question: 'Proposez-vous un support si j\'ai besoin d\'aide ?',
+  //   answer: 'Absolument ! Le plan gratuit inclut un support par email (réponse sous 48h). Les plans Premium et Agence bénéficient d\'un support prioritaire (réponse sous 24h). Nous avons également une base de connaissances complète et des tutoriels vidéo.',
+  // },
+  // {
+  //   question: 'Puis-je importer mes anciens CDC ?',
+  //   answer: 'Actuellement, la fonctionnalité d\'import n\'est pas disponible dans le MVP. Cependant, vous pouvez facilement recréer vos CDC existants en utilisant nos templates, ce qui est généralement plus rapide que de les reformater manuellement.',
+  // },
 ]
 
 export function FAQ() {
