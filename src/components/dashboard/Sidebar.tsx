@@ -53,7 +53,7 @@ export function Sidebar() {
       {/* Logo */}
       <div className="flex items-center h-16 px-6 border-b border-slate-200">
         <Link href="/dashboard" className="flex items-center space-x-2">
-          <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center">
+          <div className="w-8 h-8 bg-linear-to-br from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center">
             <span className="text-white font-bold text-lg">C</span>
           </div>
           <span className="text-xl font-bold text-slate-900">CDC Pro</span>
@@ -63,7 +63,7 @@ export function Sidebar() {
       {/* Quick Action */}
       <div className="p-4">
         <Link href="/dashboard/projects/new">
-          <Button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700">
+          <Button className="w-full bg-linear-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700">
             <PlusCircle className="mr-2 h-4 w-4" />
             Nouveau Projet
           </Button>

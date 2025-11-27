@@ -113,7 +113,7 @@ export function RecentProjects() {
                     >
                       {project.title}
                     </Link>
-                    <Badge variant="outline" className="flex-shrink-0">
+                    <Badge variant="outline" className="shrink-0">
                       {project.template}
                     </Badge>
                   </div>
@@ -134,7 +134,7 @@ export function RecentProjects() {
                     </div>
                     <div className="h-2 bg-slate-200 rounded-full overflow-hidden">
                       <div
-                        className="h-full bg-gradient-to-r from-blue-600 to-indigo-600 transition-all"
+                        className="h-full bg-linear-to-r from-blue-600 to-indigo-600 transition-all"
                         style={{ width: `${project.progress}%` }}
                       />
                     </div>

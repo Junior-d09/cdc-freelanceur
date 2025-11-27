@@ -56,7 +56,7 @@ export function QuickActions() {
           href={action.href}
           className={`group relative ${action.badge ? 'pointer-events-none opacity-60' : ''}`}
         >
-          <Card className={`p-6 bg-gradient-to-br ${colorClasses[action.color]} text-white hover:shadow-xl transition-all hover:-translate-y-1`}>
+          <Card className={`p-6 bg-linear-to-br ${colorClasses[action.color]} text-white hover:shadow-xl transition-all hover:-translate-y-1`}>
             {action.badge && (
               <div className="absolute top-2 right-2">
                 <span className="px-2 py-1 text-xs font-semibold bg-white/20 backdrop-blur-sm rounded-full">
