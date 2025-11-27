@@ -1,28 +1,24 @@
-import Link from 'next/link'
-import { RegisterForm } from '@/components/auth/RegisterForm'
-import { Button } from '@/components/ui/button'
-import { ArrowLeft } from 'lucide-react'
+import Link from "next/link";
+import { RegisterForm } from "@/components/auth/RegisterForm";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export default function RegisterPage() {
   return (
     <div className="min-h-screen flex items-center justify-center px-2 py-2">
       {/* Back to Home */}
-      <Link 
-        href="/" 
-        className="absolute top-8 left-8 flex items-center space-x-2 text-slate-600 hover:text-slate-900 transition-colors"
-      >
-        <ArrowLeft className="h-4 w-4" />
-        <span>Retour</span>
-      </Link>
-
       <div className="w-full max-w-md">
         {/* Card */}
         <div className="bg-white rounded-2xl shadow-xl p-8 border border-slate-200">
           {/* Logo */}
-          <div className="flex justify-center mb-8">
-            <div className="w-12 h-12 bg-linear-to-br from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center">
-              <span className="text-white font-bold text-2xl">C</span>
-            </div>
+          <div className="flex justify-center mb-8 mt-8">
+            <Image
+              src="/images/logo.png"
+              alt="Logo"
+              width={120}
+              height={120}
+              className=""
+            />
           </div>
 
           {/* Header */}
@@ -60,16 +56,16 @@ export default function RegisterPage() {
 
         {/* Footer */}
         <p className="text-center text-sm text-slate-600 mt-8">
-          En créant un compte, vous acceptez nos{' '}
+          En créant un compte, vous acceptez nos{" "}
           <Link href="/terms" className="text-blue-600 hover:underline">
             Conditions d&apos;utilisation
-          </Link>{' '}
-          et notre{' '}
+          </Link>{" "}
+          et notre{" "}
           <Link href="/privacy" className="text-blue-600 hover:underline">
             Politique de confidentialité
           </Link>
         </p>
       </div>
     </div>
-  )
+  );
 }

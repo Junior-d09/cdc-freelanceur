@@ -1,19 +1,19 @@
-'use client'
+"use client";
 
-import Link from 'next/link'
-import { useState } from 'react'
-import { Button } from '@/components/ui/button'
-import { Menu, X } from 'lucide-react'
+import Link from "next/link";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 export function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: 'Product', href: '#features' },
-    { name: 'Pricing', href: '#pricing' },
-    { name: 'Resources', href: '#faq' },
-    // { name: 'Blog', href: '#' },
-  ]
+    { name: "Product", href: "#features" },
+    { name: "Pricing", href: "#pricing" },
+    { name: "Resources", href: "#faq" },
+  ];
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-slate-200">
@@ -21,10 +21,15 @@ export function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-linear-to-br from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">C</span>
+            <div className="flex justify-center mb-8 mt-8">
+              <Image
+                src="/images/logo.png"
+                alt="Logo"
+                width={70}
+                height={70}
+                className=""
+              />
             </div>
-            <span className="text-xl font-bold text-slate-900">CDC Pro</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -96,5 +101,5 @@ export function Navbar() {
         )}
       </div>
     </nav>
-  )
+  );
 }

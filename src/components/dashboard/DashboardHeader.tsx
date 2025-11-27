@@ -146,7 +146,7 @@ export function DashboardHeader({ user }: DashboardHeaderProps) {
             <Button variant="ghost" className="relative h-10 w-10 rounded-full">
               <Avatar className="h-10 w-10">
                 <AvatarImage src={user.image || ''} alt={user.name || ''} />
-                <AvatarFallback className="bg-gradient-to-br from-blue-600 to-indigo-600 text-white">
+                <AvatarFallback className="bg-linear-to-br from-blue-600 to-indigo-600 text-white">
                   {initials}
                 </AvatarFallback>
               </Avatar>
