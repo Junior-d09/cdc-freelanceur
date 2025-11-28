@@ -45,7 +45,7 @@ export default function RegisterPage() {
 
           {/* Login button */}
           <Link href="/login">
-            <Button variant="outline" className="w-full text-sm h-9">
+            <Button variant="outline" className="w-full text-sm h-9 ">
               Se connecter
             </Button>
           </Link>

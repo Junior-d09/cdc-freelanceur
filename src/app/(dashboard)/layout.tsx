@@ -13,9 +13,9 @@ export default async function DashboardLayout({
   const session = await getServerSession(authOptions)
 
   // Redirection si non authentifié
-  if (!session) {
-    redirect('/login')
-  }
+  // if (!session) {
+  //   redirect('/login')
+  // }
 
   return (
     <div className="flex h-screen overflow-hidden bg-slate-50">
@@ -27,7 +27,7 @@ export default async function DashboardLayout({
       {/* Main Content */}
       <div className="flex flex-col flex-1 overflow-hidden">
         {/* Topbar */}
-        <Topbar user={session.user} />
+        {/* <Topbar user={session.user} /> */}
 
         {/* Page Content */}
         <main className="flex-1 overflow-y-auto bg-slate-50">

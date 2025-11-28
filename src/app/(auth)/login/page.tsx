@@ -44,7 +44,7 @@ export default function LoginPage() {
           </div>
 
           <Link href="/register">
-            <Button variant="outline" className="w-full">
+            <Button variant="outline" className="w-full cursor-pointer">
               Créer un compte
             </Button>
           </Link>
