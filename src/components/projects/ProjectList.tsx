@@ -1,7 +1,9 @@
 'use client'
 
 import { ProjectCard } from './ProjectCard'
-
+import Link from 'next/link'
+import { FolderKanban, PlusCircle } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 // Mock data - À remplacer par des données API
 const projects = [
   {
@@ -105,6 +107,3 @@ export function ProjectList() {
 }
 
 // Import nécessaire pour l'EmptyState
-import Link from 'next/link'
-import { FolderKanban, PlusCircle } from 'lucide-react'
-import { Button } from '@/components/ui/button'
