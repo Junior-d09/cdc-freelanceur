@@ -1,111 +1,147 @@
 'use client'
 
 import { useState } from 'react'
-import { Check, ChevronDown } from 'lucide-react'
+import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem } from '@/components/ui/dropdown-menu'
-
-const filters = [
-  {
-    name: 'Statut',
-    options: [
-      {
-        name: 'Validé',
-        value: 'validated',
-      },
-      {
-        name: 'En cours',
-        value: 'in_progress',
-      },
-      {
-        name: 'En attente',
-        value: 'pending',
-      },
-      {
-        name: 'En pause',
-        value: 'paused',
-      },
-    ],
-  },
-  {
-    name: 'Type',
-    options: [
-      {
-        name: 'E-commerce',
-        value: 'e-commerce',
-      },
-      {
-        name: 'Site Vitrine',
-        value: 'site_vitrine',
-      },
-      {
-        name: 'Identité Visuelle',
-        value: 'identity_visuelle',
-      },
-      {
-        name: 'Application Web',
-        value: 'application_web',
-      },
-      {
-        name: 'App Mobile',
-        value: 'app_mobile',
-      },
-    ], 
-  },
-]
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
+import { Badge } from '@/components/ui/badge'
+import { Search, SlidersHorizontal, X } from 'lucide-react'
 
 export function ProjectFilters() {
-  const [open, setOpen] = useState(false)
-  const [selectedFilters, setSelectedFilters] = useState<string[]>([])
+  const [search, setSearch] = useState('')
+  const [status, setStatus] = useState<string>('all')
+  const [template, setTemplate] = useState<string>('all')
+  const [showFilters, setShowFilters] = useState(false)
+
+  const activeFiltersCount = 
+    (status !== 'all' ? 1 : 0) + 
+    (template !== 'all' ? 1 : 0) + 
+    (search ? 1 : 0)
+
+  const handleReset = () => {
+    setSearch('')
+    setStatus('all')
+    setTemplate('all')
+  }
 
   return (
-    <div className="flex items-center justify-between">
-      <div className="flex items-center space-x-2">
-        <h3 className="text-lg font-semibold text-slate-900">Filtres</h3>
+    <div className="space-y-4">
+      {/* Search Bar */}
+      <div className="flex items-center gap-2">
+        <div className="relative flex-1">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+          <Input
+            placeholder="Rechercher un projet..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="pl-10"
+          />
+        </div>
         <Button
-          variant="ghost"
-          size="icon"
-          className="shrink-0"
-          onClick={() => setOpen(!open)}
+          variant="outline"
+          onClick={() => setShowFilters(!showFilters)}
+          className="relative"
         >
-          <ChevronDown className="h-4 w-4" />
+          <SlidersHorizontal className="mr-2 h-4 w-4" />
+          Filtres
+          {activeFiltersCount > 0 && (
+            <Badge className="ml-2 h-5 w-5 rounded-full p-0 flex items-center justify-center bg-blue-600">
+              {activeFiltersCount}
+            </Badge>
+          )}
         </Button>
       </div>
 
-      <DropdownMenu open={open} onOpenChange={setOpen}>
-        <DropdownMenuContent align="end">
-          {filters.map((filter) => (
-            <DropdownMenuItem key={filter.name}>          
-              <div className="flex items-center justify-between">
-                <h4 className="text-sm font-semibold text-slate-900">{filter.name}</h4>
-                <Check
-                  className="h-4 w-4"
-                  onClick={() => {
-                    if (selectedFilters.includes(filter.name)) {
-                      setSelectedFilters(selectedFilters.filter((f) => f !== filter.name))
-                    } else {
-                      setSelectedFilters([...selectedFilters, filter.name])
-                    }
-                  }}
-                />
-              </div>
-              <div className="mt-1 space-y-1">
-                {filter.options.map((option) => (
-                  <Button
-                    key={option.name}
-                    variant="ghost"
-                    size="icon"
-                    className="flex items-center space-x-2 px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 rounded-lg"
-                  >
-                    <option.value className="h-4 w-4" />
-                    {option.name}
-                  </Button>
-                ))}
-              </div>
-            </DropdownMenuItem>
-          ))}
-        </DropdownMenuContent>
-      </DropdownMenu>
+      {/* Advanced Filters */}
+      {showFilters && (
+        <div className="flex flex-wrap items-center gap-4 p-4 bg-slate-50 rounded-lg border">
+          {/* Status Filter */}
+          <div className="flex items-center gap-2">
+            <span className="text-sm font-medium text-slate-700">Statut:</span>
+            <Select value={status} onValueChange={setStatus}>
+              <SelectTrigger className="w-[180px]">
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">Tous les statuts</SelectItem>
+                <SelectItem value="pending">En attente</SelectItem>
+                <SelectItem value="in_progress">En cours</SelectItem>
+                <SelectItem value="validated">Validé</SelectItem>
+                <SelectItem value="paused">En pause</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+
+          {/* Template Filter */}
+          <div className="flex items-center gap-2">
+            <span className="text-sm font-medium text-slate-700">Template:</span>
+            <Select value={template} onValueChange={setTemplate}>
+              <SelectTrigger className="w-[200px]">
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">Tous les templates</SelectItem>
+                <SelectItem value="site-vitrine">Site Vitrine</SelectItem>
+                <SelectItem value="ecommerce">E-commerce</SelectItem>
+                <SelectItem value="app-mobile">App Mobile</SelectItem>
+                <SelectItem value="identite-visuelle">Identité Visuelle</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+
+          {/* Reset Button */}
+          {activeFiltersCount > 0 && (
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={handleReset}
+              className="ml-auto"
+            >
+              <X className="mr-2 h-4 w-4" />
+              Réinitialiser
+            </Button>
+          )}
+        </div>
+      )}
+
+      {/* Active Filters Pills */}
+      {activeFiltersCount > 0 && (
+        <div className="flex flex-wrap gap-2">
+          {search && (
+            <Badge variant="secondary" className="gap-1">
+              Recherche: {search}
+              <X
+                className="h-3 w-3 cursor-pointer"
+                onClick={() => setSearch('')}
+              />
+            </Badge>
+          )}
+          {status !== 'all' && (
+            <Badge variant="secondary" className="gap-1">
+              Statut: {status}
+              <X
+                className="h-3 w-3 cursor-pointer"
+                onClick={() => setStatus('all')}
+              />
+            </Badge>
+          )}
+          {template !== 'all' && (
+            <Badge variant="secondary" className="gap-1">
+              Template: {template}
+              <X
+                className="h-3 w-3 cursor-pointer"
+                onClick={() => setTemplate('all')}
+              />
+            </Badge>
+          )}
+        </div>
+      )}
     </div>
   )
 }

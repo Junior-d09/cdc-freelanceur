@@ -106,4 +106,3 @@ export function ProjectList() {
   )
 }
 
-// Import nécessaire pour l'EmptyState
