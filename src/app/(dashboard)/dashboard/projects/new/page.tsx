@@ -1,6 +1,6 @@
 'use client'
-
 import { useState } from 'react'
+import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { CreateProjectWizard } from '@/components/projects/create/CreateProjectWizard'
 import { Card, CardContent } from '@/components/ui/card'
@@ -53,7 +53,8 @@ export default function NewProjectPage() {
           <Card className="hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer group">
             <CardContent className="p-8">
               <div className="h-32 mb-6 bg-linear-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center">
-                <Wand2 className="h-16 w-16 text-white" />
+                {/* <Wand2 className="h-16 w-16 text-white" /> */}
+                <Image src="/images/wand.png" alt="Template" width={60} height={60} />
               </div>
               
               <h2 className="text-2xl font-bold text-slate-900 mb-3">
@@ -94,8 +95,8 @@ export default function NewProjectPage() {
           {/* Option 2: Projet Libre */}
           <Card className="hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer group">
             <CardContent className="p-8">
-              <div className="h-32 mb-6 bg-linear-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center">
-                <FileText className="h-16 w-16 text-white" />
+              <div className="h-32 mb-6 bg-linear-to-br from-blue-500 to-indigo-300 rounded-lg flex items-center justify-center">
+                <FileText className="h-16 w-16 text-white" /> 
               </div>
               
               <h2 className="text-2xl font-bold text-slate-900 mb-3">
@@ -107,25 +108,25 @@ export default function NewProjectPage() {
 
               <ul className="space-y-2 mb-8 text-sm text-slate-600">
                 <li className="flex items-center gap-2">
-                  <div className="h-1.5 w-1.5 rounded-full bg-purple-600" />
+                  <div className="h-1.5 w-1.5 rounded-full bg-blue-500" />
                   Éditeur de texte riche
                 </li>
                 <li className="flex items-center gap-2">
-                  <div className="h-1.5 w-1.5 rounded-full bg-purple-600" />
+                  <div className="h-1.5 w-1.5 rounded-full bg-blue-500" />
                   Liberté totale
                 </li>
                 <li className="flex items-center gap-2">
-                  <div className="h-1.5 w-1.5 rounded-full bg-purple-600" />
+                  <div className="h-1.5 w-1.5 rounded-full bg-blue-500" />
                   Personnalisation complète
                 </li>
                 <li className="flex items-center gap-2">
-                  <div className="h-1.5 w-1.5 rounded-full bg-purple-600" />
+                  <div className="h-1.5 w-1.5 rounded-full bg-blue-500" />
                   Pour experts
                 </li>
               </ul>
 
               <Button 
-                className="w-full bg-linear-to-r from-purple-600 to-pink-600 group-hover:from-purple-700 group-hover:to-pink-700"
+                className="w-full bg-linear-to-r from-blue-600 to-indigo-600 group-hover:from-blue-700 group-hover:to-indigo-700"
                 onClick={handleBlankProject}
               >
                 Créer un projet vide
