@@ -141,14 +141,14 @@ export default function NewProjectPage() {
   if (creationType === 'template') {
     return (
       <div className="max-w-5xl mx-auto">
-        <Button
+        {/* <Button
           variant="ghost"
           onClick={() => setCreationType(null)}
           className="mb-6"
         >
           <ArrowLeft className="mr-2 h-4 w-4" />
           Retour au choix
-        </Button>
+        </Button> */}
 
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-slate-900">

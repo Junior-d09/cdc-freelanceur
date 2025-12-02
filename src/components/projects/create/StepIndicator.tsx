@@ -1,3 +1,4 @@
+// src/components/projects/create/StepIndicator.tsx
 import { CheckCircle, Circle } from 'lucide-react'
 import { cn } from '@/lib/utils'
 

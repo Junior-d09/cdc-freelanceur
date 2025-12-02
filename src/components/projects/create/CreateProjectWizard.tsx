@@ -1,18 +1,19 @@
 'use client'
-
 import { useState } from 'react'
 import { StepIndicator } from './StepIndicator'
 import { TemplateSelector } from './TemplateSelector'
 import { QuestionnaireForm } from './QuestionnaireForm'
+import { Preview } from './Preview'
+import { Success } from './Success'
 import { Button } from '@/components/ui/button'
-import { ArrowLeft, Loader2 } from 'lucide-react'
+import { ArrowLeft } from 'lucide-react'
 
 interface CreateProjectWizardProps {
   onComplete: (data: any) => void
   isLoading?: boolean
 }
 
-type Step = 'template' | 'questionnaire' | 'preview'
+type Step = 'template' | 'questionnaire' | 'preview' | 'success'
 
 export function CreateProjectWizard({ onComplete, isLoading }: CreateProjectWizardProps) {
   const [currentStep, setCurrentStep] = useState<Step>('template')
@@ -22,7 +23,8 @@ export function CreateProjectWizard({ onComplete, isLoading }: CreateProjectWiza
   const steps = [
     { id: 'template', label: 'Template', completed: !!selectedTemplate },
     { id: 'questionnaire', label: 'Questionnaire', completed: !!formData },
-    { id: 'preview', label: 'Aperçu', completed: false },
+    { id: 'preview', label: 'Aperçu', completed: currentStep === 'success' || currentStep === 'preview' ? !!formData : false },
+    { id: 'success', label: 'Succès', completed: currentStep === 'success' },
   ]
 
   const currentStepIndex = steps.findIndex(s => s.id === currentStep)
@@ -33,25 +35,35 @@ export function CreateProjectWizard({ onComplete, isLoading }: CreateProjectWiza
   }
 
   const handleQuestionnaireComplete = (data: any) => {
-    setFormData(data)
-    onComplete({
+    const payload = {
       templateType: selectedTemplate,
       ...data,
-    })
+    }
+    setFormData(payload)
+    setCurrentStep('preview')
+  }
+
+  const handleConfirm = async () => {
+    if (!formData) return
+    // Appelle parent pour création finale (API call côté parent)
+    onComplete(formData)
+    setCurrentStep('success')
   }
 
   const handleBack = () => {
     if (currentStep === 'questionnaire') {
       setCurrentStep('template')
+    } else if (currentStep === 'preview') {
+      setCurrentStep('questionnaire')
+    } else if (currentStep === 'success') {
+      setCurrentStep('preview')
     }
   }
 
   return (
     <div className="space-y-8">
-      {/* Step Indicator */}
       <StepIndicator steps={steps} currentStep={currentStepIndex} />
 
-      {/* Back Button */}
       {currentStep !== 'template' && !isLoading && (
         <Button variant="ghost" onClick={handleBack}>
           <ArrowLeft className="mr-2 h-4 w-4" />
@@ -59,7 +71,7 @@ export function CreateProjectWizard({ onComplete, isLoading }: CreateProjectWiza
         </Button>
       )}
 
-      {/* Step Content */}
+      {/* Steps */}
       {currentStep === 'template' && (
         <TemplateSelector onSelect={handleTemplateSelect} />
       )}
@@ -72,13 +84,17 @@ export function CreateProjectWizard({ onComplete, isLoading }: CreateProjectWiza
         />
       )}
 
-      {isLoading && (
-        <div className="flex items-center justify-center py-12">
-          <div className="text-center">
-            <Loader2 className="h-8 w-8 animate-spin mx-auto mb-4 text-blue-600" />
-            <p className="text-slate-600">Création de votre projet en cours...</p>
-          </div>
-        </div>
+      {currentStep === 'preview' && formData && (
+        <Preview
+          data={formData}
+          onEdit={() => setCurrentStep('questionnaire')}
+          onConfirm={handleConfirm}
+          isLoading={isLoading}
+        />
+      )}
+
+      {currentStep === 'success' && (
+        <Success data={formData} />
       )}
     </div>
   )
