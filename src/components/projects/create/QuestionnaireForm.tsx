@@ -300,7 +300,7 @@ export function QuestionnaireForm({ templateId, onSubmit, isLoading }: Questionn
 
       {/* Submit */}
       <div className="flex justify-end pt-6 border-t">
-        <Button type="submit" size="lg" disabled={isLoading} className="bg-gradient-to-r from-blue-600 to-indigo-600">
+        <Button type="submit" size="lg" disabled={isLoading} className="bg-linear-to-r from-blue-600 to-indigo-600">
           {isLoading ? (
             <>
               <Loader2 className="mr-2 h-4 w-4 animate-spin" />
